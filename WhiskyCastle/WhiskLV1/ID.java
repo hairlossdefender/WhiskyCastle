@@ -21,10 +21,10 @@ public class ID {
 			whiskies[i] = new Whisky(name, score, vol);
 		}
 		
-		WhiskyScoreSorter sorter = new WhiskyScoreSorter(whiskies, 0);
+		Options sorter = new Options();
 		System.out.print("Enter the index of the whisky to retrieve: ");
 		int index = scanner.nextInt();
-		Whisky selectedWhisky = sorter.getWhisky(index);
+		Whisky selectedWhisky = sorter.getWhisky(whiskies,index);
 		System.out.println("Selected whisky: " + selectedWhisky.getName() + ", score: " + selectedWhisky.getScore());
 	}
 }

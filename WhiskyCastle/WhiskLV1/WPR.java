@@ -15,7 +15,16 @@ public class WPR {
 	    Scanner scanner = new Scanner(System.in);
 	    int size =1;
 	    Whisky[] whiskies = new Whisky[size];
-	    vol);
+	    int count=0;
+	    for (int i = 0; i < size; i++) {
+	        System.out.print("Enter the name of the whisky" + (1 + i));
+	        String name = scanner.nextLine();
+	        System.out.print("Enter the alcohol volume of the whisky" + (1 + i));
+	        double vol = scanner.nextDouble();
+	        System.out.print("Enter the score" + (1 + i));
+	        int score = scanner.nextInt();
+	        scanner.nextLine();
+	        whiskies[i] = new Whisky(name, score, vol);
 	        count++;
 
 	        if (count >= size) {
@@ -33,6 +42,8 @@ public class WPR {
 	            break;
 	    }
 	    
+	    
+	 
 	    
 	 
 	    WhiskySorter sorter = new WhiskySorter(whiskies,count);

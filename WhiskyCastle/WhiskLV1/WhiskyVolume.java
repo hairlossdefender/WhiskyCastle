@@ -20,7 +20,7 @@ public class WhiskyVolume {
 
             whiskies[i] = new Whisky(name, score, vol);
         }
-        WhiskyVolumeSorter WVS = new WhiskyVolumeSorter(whiskies);
-        WVS.printVolumeSortedWhiskiesByScore();
+        WhiskySorter WVS = new WhiskySorter(whiskies,0);
+        WVS.printSortedWhiskiesByScore();
     }
 }
