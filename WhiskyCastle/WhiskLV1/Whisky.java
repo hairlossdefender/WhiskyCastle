@@ -4,7 +4,8 @@ public class Whisky {
 	  
 		private String name;
 	    private int score;
-	    double vol;
+	    private double vol;
+	    private int Price;
 	    public Whisky(String name, int score, double vol) {
 	        this.name = name;
 	        this.score = score;
@@ -19,6 +20,9 @@ public class Whisky {
 	    }
 	    public double getVol() {
 	        return vol;
+	    }
+	    public double getPrice() {
+	        return Price;
 	    }
 
 }
