@@ -3,7 +3,7 @@ package WhiskLV1;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Options {
+public class Options {//사용자가 이용할 옵션들
 	private WhiskySorter sorter;
 	public Options() {
 		sorter=null;
