@@ -6,7 +6,7 @@ import java.util.Comparator;
 import java.util.List;
 
 public class WhiskySorter {
-    private ArrayList<Whisky> whiskies;
+	private ArrayList<Whisky> whiskies;
     private int count;
 
     public WhiskySorter(ArrayList<Whisky> whiskies2, int count) {
@@ -62,30 +62,12 @@ public class WhiskySorter {
             }
         }
     }
+	public ArrayList<Whisky> getSorted() {
+		// TODO Auto-generated method stub
+		return whiskies;
+	}
     
     
 
-class WhiskyVolumeSorter {
-    private Whisky[] whiskies;
 
-    public WhiskyVolumeSorter(Whisky[] whiskies) {
-        this.whiskies = whiskies;
-    }
-
-    public void printVolumeSortedWhiskies() {
-        for (int i = 0; i < whiskies.length; i++) {
-            for (int j = i+1; j < whiskies.length; j++) {
-                if (whiskies[i].getVol() > whiskies[j].getVol()) {
-                    Whisky temp = whiskies[i];
-                    whiskies[i] = whiskies[j];
-                    whiskies[j] = temp;
-                }
-            }
-        }
-
-        for (Whisky whisky : whiskies) {
-            System.out.println(whisky.getName() + ": alcVol" + whisky.getVol() + "  " + whisky.getScore());
-        }
-    }
-     }
 }

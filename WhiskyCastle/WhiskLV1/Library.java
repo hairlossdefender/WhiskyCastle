@@ -1,5 +1,9 @@
 package WhiskLV1;
 
-public class Library {
+import java.util.ArrayList;
 
+public class Library {
+	private LiqourShops shops;
+	private Individuals people;
+	private ArrayList<Whisky> whiskies;
 }
