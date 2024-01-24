@@ -9,12 +9,12 @@ public class Options {//사용자가 이용할 옵션들
 		sorter=null;
 	}
 	public ArrayList<Whisky> archivist(int a) {
-		 Scanner scanner = new Scanner(System.in);
+			Scanner scanner = new Scanner(System.in);
 		    int size =1;
 		    ArrayList<Whisky> whiskies = new ArrayList<>();
 		    int count=0;
 		    System.out.print("Enter 1 to start or 2 to exit: ");
-	        int con = scanner.nextInt();
+		    int con = scanner.nextInt();
 	        scanner.nextLine();
 	        if (con == 2) {
 	            return null;}
@@ -40,12 +40,25 @@ public class Options {//사용자가 이용할 옵션들
 		    }
 		    
 		  
-		    Whisky[] whiskiesArray = whiskies.toArray(new Whisky[whiskies.size()]);    
-		    
-		    sorter = new WhiskySorter(whiskies,count);  
-		    sorter.printSortedWhiskies(a);
+		    Whisky[] whiskiesArray = whiskies.toArray(new Whisky[whiskies.size()]); //필요시 사용할 위스키 배열   
 		    
 		    return whiskies;
+	}
+	public void SortWhiskies(ArrayList<Whisky> whiskies) {
+		int n=0;
+		Scanner scanner = new Scanner(System.in);
+		System.out.print("1. order of scores\n 2. order of scores\n 3. order of volume");
+		int num1 = scanner.nextInt();
+		 n=n+num1;
+		 System.out.print("1. decending order\n 2. ascending order ");
+		 int num2 = scanner.nextInt();
+		 WhiskySorter sorter= new WhiskySorter(whiskies);
+		 if(num2==1) {
+			 sorter.SortedWhiskies(num1, true);
+		 }
+		 else {
+			 sorter.SortedWhiskies(num1+1, true);
+		 }
 	}
 	public Whisky getWhisky( int index) {
 		if(sorter==null) {
@@ -53,10 +66,10 @@ public class Options {//사용자가 이용할 옵션들
 			return null;
 		}
 		else {
-	    if (index < 0 || index >= ((WhiskySorter) sorter).getSorted().size()) {
+	    if (index < 0 || index >= ((WhiskySorter) sorter).SortedWhiskies(index, false).size()) {
 	        throw new IndexOutOfBoundsException("Index " + index + " is out of bounds");
 	    }
-	    return sorter.getSorted().get(index);}
+	    return sorter.SortedWhiskies(index, false).get(index);}
 	}
 	
 	}

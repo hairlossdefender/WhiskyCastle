@@ -9,45 +9,51 @@ public class WhiskySorter {
 	private ArrayList<Whisky> whiskies;
     private int count;
 
-    public WhiskySorter(ArrayList<Whisky> whiskies2, int count) {
+    public WhiskySorter(ArrayList<Whisky> whiskies) {
     	
-        this.whiskies = whiskies2;
-        this.count = count;
+        this.whiskies = whiskies;
+        this.count = whiskies.size();
     }
 
-    public void printSortedWhiskies(int select) {
+    public ArrayList<Whisky> SortedWhiskies(int select, boolean print) {
     	 Comparator<Whisky> comparator = null;
     
     	 switch (select) {
          case 1:
-        	 System.out.println("Whisky names and scores in decending order of scores");
+        	 if(print) {
+        	 System.out.println("Whisky in decending order of scores");}
              comparator = Comparator.comparingInt(Whisky::getScore).reversed();
              break;
          case 2:
-        	 System.out.println("Whisky names and scores in ascending order of scores");
+        	 if(print) {
+        	 System.out.println("Whisky in ascending order of scores");}
              comparator = Comparator.comparingInt(Whisky::getScore);
              break;
          case 3:
-        	 System.out.println("Whisky names and scores in decending order of alc volume");
+        	 if(print) {
+        	 System.out.println("Whisky in decending order of alc volume");}
              comparator = Comparator.comparingDouble(Whisky::getVol).reversed();
              break;
          case 4:
-        	 System.out.println("Whisky names and scores in ascending order of alc volume");
+        	 if(print) {
+        	 System.out.println("Whisky in ascending order of alc volume");}
              comparator = Comparator.comparingDouble(Whisky::getVol);
              break;
          case 5:
-        	 System.out.println("Whisky names and scores in decending order of price");
+        	 if(print) {
+        	 System.out.println("Whisky in decending order of price");}
              comparator = Comparator.comparingDouble(Whisky::getVol).reversed();
              break;
          case 6:
-        	 System.out.println("Whisky names and scores in ascending order of price");
+        	 if(print) {
+        	 System.out.println("Whisky in ascending order of price");}
              comparator = Comparator.comparingDouble(Whisky::getVol);
              break;
     	 
     	 }
     	 if (comparator == null) {
     	        System.out.println("Invalid selection");
-    	        return;
+    	        return null;
     	    }
     	 
     	 List<Whisky> sortedWhiskies = new ArrayList<>(whiskies);
@@ -61,11 +67,9 @@ public class WhiskySorter {
                 System.out.println("done");
             }
         }
+        return (ArrayList<Whisky>) sortedWhiskies;
     }
-	public ArrayList<Whisky> getSorted() {
-		// TODO Auto-generated method stub
-		return whiskies;
-	}
+	
     
     
 
