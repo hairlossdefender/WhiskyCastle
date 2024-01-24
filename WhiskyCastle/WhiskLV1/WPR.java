@@ -13,10 +13,11 @@ public class WPR {
 
 	public static void main(String[] args) {
 	    // TODO Auto-generated method stub
-	   
+	   ArrayList<Whisky> whiskies;
 	   Options option = new Options();
-	   option.archivist(1);
+	   whiskies=option.archivist();
 	   option.getWhisky(2);
+	   option.SortWhiskies(whiskies);
 	}
 }
    

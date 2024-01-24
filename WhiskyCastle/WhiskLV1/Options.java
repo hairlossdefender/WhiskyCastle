@@ -8,7 +8,7 @@ public class Options {//사용자가 이용할 옵션들
 	public Options() {
 		sorter=null;
 	}
-	public ArrayList<Whisky> archivist(int a) {
+	public ArrayList<Whisky> archivist() {
 			Scanner scanner = new Scanner(System.in);
 		    int size =1;
 		    ArrayList<Whisky> whiskies = new ArrayList<>();
@@ -47,12 +47,12 @@ public class Options {//사용자가 이용할 옵션들
 	public void SortWhiskies(ArrayList<Whisky> whiskies) {
 		int n=0;
 		Scanner scanner = new Scanner(System.in);
-		System.out.print("1. order of scores\n 2. order of scores\n 3. order of volume");
+		System.out.print("1. order of scores\n 2. order of volume\n 3. order of price");
 		int num1 = scanner.nextInt();
 		 n=n+num1;
 		 System.out.print("1. decending order\n 2. ascending order ");
 		 int num2 = scanner.nextInt();
-		 WhiskySorter sorter= new WhiskySorter(whiskies);
+		 sorter= new WhiskySorter(whiskies);
 		 if(num2==1) {
 			 sorter.SortedWhiskies(num1, true);
 		 }
@@ -60,7 +60,7 @@ public class Options {//사용자가 이용할 옵션들
 			 sorter.SortedWhiskies(num1+1, true);
 		 }
 	}
-	public Whisky getWhisky( int index) {
+	public Whisky getWhisky(int index) {
 		if(sorter==null) {
 			System.out.print("there is no whisky recorded");
 			return null;

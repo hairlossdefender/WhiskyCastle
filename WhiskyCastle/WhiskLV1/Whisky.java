@@ -10,7 +10,7 @@ public class Whisky {
 	        this.score = score;
 	        this.vol = vol;
 	    }
-
+//여기에 map 자료형을 추가하여 동적인 특성 할당
 	    public String getName() {
 	        return name;
 	    }
