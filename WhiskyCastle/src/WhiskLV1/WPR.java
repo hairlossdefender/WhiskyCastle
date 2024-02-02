@@ -15,7 +15,7 @@ public class WPR {
 	    // TODO Auto-generated method stub
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/","root","Zxczxc123123@");
+			Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/whiskycastle","root","Zxczxc123123@");
 			Statement stat=con.createStatement();
 			System.out.println("insert");
 			String sql="Insert into castleID values(01)";
